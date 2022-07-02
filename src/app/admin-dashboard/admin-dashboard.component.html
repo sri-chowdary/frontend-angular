@@ -1,0 +1,68 @@
+n<nav class="navbar navbar-light bg-success">
+    <div class = "container-fluid">
+        <h1 style="color:white;">Admin Dashboard</h1>
+        <div class="d-flex">
+          <button type="button"data-toggle="modal" data-target="#exampleModal"class ="btn btn-primary">Add Course</button>
+        </div>
+    </div>
+</nav>
+<table class="table mt-3">
+<thead>
+    <tr >
+        <th scope ="col">Course ID</th>
+        <th scope ="col">Course Name</th>
+        <!-- <th scope ="col">Course Price</th> -->
+        
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let row of courseData">
+      <!-- <td>{{row}}</td> -->
+        <td>{{row.courseId}}</td>
+        <td>{{row.courseName}}</td>
+        <td>{{row.courseprice}}</td>
+        <td>
+          <button (click)="onEdit(row)"type="button"data-toggle="modal" data-target="#exampleModal"class="btn btn-info">EDIT</button>
+            <button (click)="deleteallCourse(row)"class="btn btn-danger mx-3">DELETE</button>
+        </td>
+    </tr>
+</tbody>
+
+</table>
+  
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Course Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Course Id</label>
+              <input type="text" formControlName="courseid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Cour se Id">
+              
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Course Name</label>
+                <input type="text" formControlName="coursename" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Course Name">
+                
+              </div>
+              <!-- <div class="form-group">
+                <label for="exampleInputEmail1">Course Price</label>
+                <input type="text" formControlName="courseprice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Course Price">
+                 
+              </div> -->
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="postCourseDetails()"class="btn btn-primary">Add Course</button>
+      </div>
+    </div>
+  </div>
+</div>

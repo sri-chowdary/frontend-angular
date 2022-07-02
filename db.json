@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "courseid": "BTCS902",
+      "coursename": "Computer Networks",
+      "courseprice": "100$",
+      "id": 4
+    },
+    {
+      "courseid": "1",
+      "coursename": "abd",
+      "courseprice": "$34",
+      "id": 5
+    },
+    {
+      "courseid": "BTCS890",
+      "coursename": "Data science",
+      "courseprice": "100$",
+      "id": 6
+    },
+    {
+      "courseid": "6",
+      "coursename": "r3",
+      "courseprice": "90",
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
